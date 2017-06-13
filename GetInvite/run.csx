@@ -13,6 +13,7 @@ using System.Text;
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
+	//Testing continuous deployment
     var calendar = new Calendar();
     calendar.AddProperty("X-WR-CALNAME", "Azure Functions Webinar"); // sets the calendar title
     calendar.AddProperty("X-ORIGINAL-URL", "http://aka.ms/AzureFunctionsLive");
