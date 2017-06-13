@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6": {
+      "Ical.Net/2.2.19": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Ical.Net.Collections.dll": {},
+          "lib/net46/Ical.Net.dll": {},
+          "lib/net46/NodaTime.dll": {},
+          "lib/net46/antlr.runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Ical.Net.Collections.dll": {},
+          "lib/net46/Ical.Net.dll": {},
+          "lib/net46/NodaTime.dll": {},
+          "lib/net46/antlr.runtime.dll": {}
+        }
+      },
+      "Newtonsoft.Json/9.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ical.Net/2.2.19": {
+      "sha512": "dyg4H8jTBaFrew9noc26eq3bxRrn5MgOw4T8UgTeUXP/FgYsd09/Ioi3/yVQ7sK8ph7eBzRhYowP2pglY3+T8g==",
+      "type": "package",
+      "path": "ical.net/2.2.19",
+      "files": [
+        "ical.net.2.2.19.nupkg.sha512",
+        "ical.net.nuspec",
+        "lib/net40/Ical.Net.Collections.dll",
+        "lib/net40/Ical.Net.Collections.pdb",
+        "lib/net40/Ical.Net.dll",
+        "lib/net40/Ical.Net.pdb",
+        "lib/net40/Ical.Net.xml",
+        "lib/net40/NodaTime.dll",
+        "lib/net40/antlr.runtime.dll",
+        "lib/net40/antlr.runtime.pdb",
+        "lib/net40/antlr.runtime.xml",
+        "lib/net45/Ical.Net.Collections.dll",
+        "lib/net45/Ical.Net.Collections.pdb",
+        "lib/net45/Ical.Net.dll",
+        "lib/net45/Ical.Net.pdb",
+        "lib/net45/Ical.Net.xml",
+        "lib/net45/NodaTime.dll",
+        "lib/net45/antlr.runtime.dll",
+        "lib/net45/antlr.runtime.pdb",
+        "lib/net45/antlr.runtime.xml",
+        "lib/net46/Ical.Net.Collections.dll",
+        "lib/net46/Ical.Net.Collections.pdb",
+        "lib/net46/Ical.Net.dll",
+        "lib/net46/Ical.Net.pdb",
+        "lib/net46/Ical.Net.xml",
+        "lib/net46/NodaTime.dll",
+        "lib/net46/antlr.runtime.dll",
+        "lib/net46/antlr.runtime.pdb",
+        "lib/net46/antlr.runtime.xml"
+      ]
+    },
+    "Newtonsoft.Json/9.0.1": {
+      "sha512": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
+      "type": "package",
+      "path": "newtonsoft.json/9.0.1",
+      "files": [
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.9.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v4.6": [
+      "Ical.Net >= 2.2.19",
+      "Newtonsoft.Json >= 9.0.1"
+    ]
+  },
+  "tools": {},
+  "projectFileToolGroups": {},
+  "packageFolders": {
+    "D:\\home\\data\\Functions\\packages\\nuget": {}
+  }
+}
