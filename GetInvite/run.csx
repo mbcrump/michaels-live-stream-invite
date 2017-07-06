@@ -13,7 +13,7 @@ using System.Text;
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
-	//Testing continuous deployment
+	//Testing continuous deployment 070617
     var calendar = new Calendar();
     calendar.AddProperty("X-WR-CALNAME", "Azure Functions Webinar"); // sets the calendar title
     calendar.AddProperty("X-ORIGINAL-URL", "http://aka.ms/AzureFunctionsLive");
@@ -21,8 +21,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
   
     var icalevent = new Event()
         {
-            DtStart = new CalDateTime(new DateTime(2017, 07, 06, 18, 0, 0, DateTimeKind.Utc)),
-            DtEnd = new CalDateTime(new DateTime(2017, 07, 06, 19, 0, 0, DateTimeKind.Utc)),
+            DtStart = new CalDateTime(new DateTime(2017, 08, 10, 18, 00, 0, DateTimeKind.Utc)),
+            DtEnd = new CalDateTime(new DateTime(2017, 08, 10, 19, 00, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
             Location = "http://aka.ms/AzureFunctionsLive",
             Summary = "Azure Function Webinar",
