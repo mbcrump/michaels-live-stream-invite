@@ -21,8 +21,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
   
     var icalevent = new Event()
         {
-            DtStart = new CalDateTime(new DateTime(2018, 09, 27, 18, 15, 0, DateTimeKind.Utc)),
-            DtEnd = new CalDateTime(new DateTime(2018, 09, 27, 19, 15, 0, DateTimeKind.Utc)),
+            DtStart = new CalDateTime(new DateTime(2018, 10, 25, 18, 15, 0, DateTimeKind.Utc)),
+            DtEnd = new CalDateTime(new DateTime(2018, 10, 25, 19, 15, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
             Location = "http://aka.ms/AzureFunctionsLive",
             Summary = "Azure Function Webinar",
