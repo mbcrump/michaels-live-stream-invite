@@ -15,21 +15,21 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 {
 	//Testing continuous deployment 070617
     var calendar = new Calendar();
-    calendar.AddProperty("X-WR-CALNAME", "Azure Functions Webinar"); // sets the calendar title
-    calendar.AddProperty("X-ORIGINAL-URL", "http://aka.ms/AzureFunctionsLive");
+    calendar.AddProperty("X-WR-CALNAME", "Mbcrump's Live Stream"); // sets the calendar title
+    calendar.AddProperty("X-ORIGINAL-URL", "https://twitch.tv/mbcrump");
     calendar.AddProperty("METHOD", "PUBLISH");
   
     var icalevent = new Event()
         {
-            DtStart = new CalDateTime(new DateTime(2018, 10, 25, 18, 00, 0, DateTimeKind.Utc)),
-            DtEnd = new CalDateTime(new DateTime(2018, 10, 25, 19, 00, 0, DateTimeKind.Utc)),
+            DtStart = new CalDateTime(new DateTime(2020, 1, 28, 17, 00, 0, DateTimeKind.Utc)),
+            DtEnd = new CalDateTime(new DateTime(2020, 1, 28, 19, 00, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
             Location = "http://aka.ms/AzureFunctionsLive",
             Summary = "Azure Function Webinar",
             Url = new Uri("http://aka.ms/AzureFunctionsLive")
         };
 
-    string description = "Join the Azure Functions team as we cover some cool tips and tricks, review what's coming next and take your questions!";
+    string description = "Join Michael's Live Stream as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
 
     icalevent.AddProperty("X-ALT-DESC;FMTTYPE=text/html", description); // creates an HTML description
     calendar.Events.Add(icalevent);
@@ -46,7 +46,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     result.Content.Headers.ContentDisposition =
         new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment")
     {
-        FileName = "webinarinvite.ics"
+        FileName = "streaminvite.ics"
     };
 
     result.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
