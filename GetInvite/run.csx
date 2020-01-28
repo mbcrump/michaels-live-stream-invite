@@ -24,9 +24,9 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
             DtStart = new CalDateTime(new DateTime(2020, 1, 28, 17, 00, 0, DateTimeKind.Utc)),
             DtEnd = new CalDateTime(new DateTime(2020, 1, 28, 19, 00, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
-            Location = "http://aka.ms/AzureFunctionsLive",
-            Summary = "Azure Function Webinar",
-            Url = new Uri("http://aka.ms/AzureFunctionsLive")
+            Location = "https://twitch.tv/mbcrump",
+            Summary = "Mbcrump's Live Stream",
+            Url = new Uri("https://twitch.tv/mbcrump")
         };
 
     string description = "Join Michael's Live Stream as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
