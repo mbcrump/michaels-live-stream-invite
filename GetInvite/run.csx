@@ -39,7 +39,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 	    stopminute = 30;
     }
 	else{
-	 nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
+	 nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Wednesday);
 	   starthour = 01;
 	    stophour = 02;
 	    stopminute = 30;
