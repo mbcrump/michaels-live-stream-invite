@@ -45,7 +45,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 	    stopminute = 30;
 	
     }
-    string description = "Join Michael's Live Stream (https://twitch.tv/mbcrump) on " + nextStreamDay.Month + "/" + nextStreamDay.Day + "as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
+    string description = "Join Michael's Live Stream (https://twitch.tv/mbcrump) on " + nextStreamDay.Month + "/" + nextStreamDay.Day + " as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
 
     var icalevent = new Event()
         {
