@@ -86,5 +86,5 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
    {
       // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
       int daysToAdd = ((int) day - (int) start.DayOfWeek + 7) % 7;
-      return start.AddDays(daysToAdd);
+      return start.AddDays(daysToAdd + 1);
    }
