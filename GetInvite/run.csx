@@ -18,16 +18,33 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     calendar.AddProperty("X-WR-CALNAME", "Mbcrump's Live Stream"); // sets the calendar title
     calendar.AddProperty("X-ORIGINAL-URL", "https://twitch.tv/mbcrump");
     calendar.AddProperty("METHOD", "PUBLISH");
-  
-    DateTime nextTuesday = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
-    Console.WriteLine(nextTuesday.Month);
+    int starthour, stophour, startminute, stopminute = 00;
+    DateTime nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
 	
+    // parse query parameter
+    string dayofstream = req.GetQueryNameValuePairs()
+        .FirstOrDefault(q => string.Compare(q.Key, "day", true) == 0)
+        .Value;
+
+    if (dayofstream == "friday"){
+	    nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Friday);
+	    starthour = 05;
+	    stophour = 06;
+	    stopminute = 30;
+    }
+	else{
+	 nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
+	   starthour = 01;
+	    stophour = 02;
+	    stopminute = 30;
+	
+    }
     string description = "Join Michael's Live Stream (https://twitch.tv/mbcrump) as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
 
     var icalevent = new Event()
         {
-            DtStart = new CalDateTime(new DateTime(nextTuesday.Year, nextTuesday.Month, nextTuesday.Day, 01, 00, 0, DateTimeKind.Utc)),
-            DtEnd = new CalDateTime(new DateTime(nextTuesday.Year, nextTuesday.Month, nextTuesday.Day, 02, 30, 0, DateTimeKind.Utc)),
+            DtStart = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, 01, 00, 0, DateTimeKind.Utc)),
+            DtEnd = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, 02, 30, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
             Location = "https://twitch.tv/mbcrump",
             Summary = "Mbcrump's Live Stream",
