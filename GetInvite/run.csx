@@ -22,12 +22,16 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     DateTime nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
 	
     // parse query parameter
-    //string dayofstream = req.GetQueryNameValuePairs()
-    //    .FirstOrDefault(q => string.Compare(q.Key, "day", true) == 0)
-    //    .Value;
+    string dayofstream = req.GetQueryNameValuePairs()
+        .FirstOrDefault(q => string.Compare(q.Key, "day", true) == 0)
+        .Value;
 	
-	string dayofstream = req.Query["day"];
+// Get request body
+    dynamic data = await req.Content.ReadAsAsync<object>();
 
+    // Set name to query string or body data
+    dayofstream = dayofstream ?? data?.dayofstream;
+	
     if (dayofstream == "friday"){
 	    nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Friday);
 	    starthour = 05;
