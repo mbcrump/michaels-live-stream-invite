@@ -22,7 +22,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     DateTime nextTuesday = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
     Console.WriteLine(nextTuesday.Month);
 	
-    string description = "Join Michael's Live Stream as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
+    string description = "Join Michael's Live Stream (https://twitch.tv/mbcrump) as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
 
     var icalevent = new Event()
         {
