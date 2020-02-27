@@ -22,6 +22,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     DateTime nextTuesday = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
     Console.WriteLine(nextTuesday.Month);
 	
+    string description = "Join Michael's Live Stream as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
+
     var icalevent = new Event()
         {
             DtStart = new CalDateTime(new DateTime(nextTuesday.Year, nextTuesday.Month, nextTuesday.Day, 01, 00, 0, DateTimeKind.Utc)),
@@ -29,10 +31,10 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
             Created = new CalDateTime(DateTime.Now),
             Location = "https://twitch.tv/mbcrump",
             Summary = "Mbcrump's Live Stream",
-            Url = new Uri("https://twitch.tv/mbcrump")
+            Url = new Uri("https://twitch.tv/mbcrump"),
+	    Description = description
         };
 
-    string description = "Join Michael's Live Stream as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
 
     icalevent.AddProperty("X-ALT-DESC;FMTTYPE=text/html", description); // creates an HTML description
     calendar.Events.Add(icalevent);
