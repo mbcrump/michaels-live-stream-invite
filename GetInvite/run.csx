@@ -22,9 +22,11 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     DateTime nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
 	
     // parse query parameter
-    string dayofstream = req.GetQueryNameValuePairs()
-        .FirstOrDefault(q => string.Compare(q.Key, "day", true) == 0)
-        .Value;
+    //string dayofstream = req.GetQueryNameValuePairs()
+    //    .FirstOrDefault(q => string.Compare(q.Key, "day", true) == 0)
+    //    .Value;
+	
+	string dayofstream = req.Query["day"];
 
     if (dayofstream == "friday"){
 	    nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Friday);
