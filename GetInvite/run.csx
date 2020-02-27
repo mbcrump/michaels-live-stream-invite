@@ -49,8 +49,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 
     var icalevent = new Event()
         {
-            DtStart = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc)),
-            DtEnd = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, stophour, stopminute, 0, DateTimeKind.Utc)),
+            DtStart = new CalDateTime(new DateTime(nextStreamDay.Year.ToUniversalTime(), nextStreamDay.Month.ToUniversalTime(), nextStreamDay.Day.ToUniversalTime(), starthour, 0, 0, DateTimeKind.Utc)),
+            DtEnd = new CalDateTime(new DateTime(nextStreamDay.YearToUniversalTime(), nextStreamDay.Month.ToUniversalTime(), nextStreamDay.Day.ToUniversalTime(), stophour, stopminute, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
             Location = "https://twitch.tv/mbcrump",
             Summary = "Mbcrump's Live Stream",
@@ -86,5 +86,5 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
    {
       // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
       int daysToAdd = ((int) day - (int) start.DayOfWeek + 7) % 7;
-      return start.AddDays(daysToAdd + 1);
+      return start.AddDays(daysToAdd);
    }
