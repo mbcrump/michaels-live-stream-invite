@@ -37,20 +37,24 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 	    starthour = 16;
 	    stophour = 17;
 	    stopminute = 30;
+	     var newDate = = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
+
     }
 	else{
 	 nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
 	   starthour = 00;
 	    stophour = 01;
 	    stopminute = 30;
+	var newDate = = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
+
 	
     }
     string description = "Join Michael's Live Stream (https://twitch.tv/mbcrump) on as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
-
+    var newDate = = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
     var icalevent = new Event()
         {
             DtStart = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc)),
-            DtEnd = new CalDateTime(nextStreamDay.AddHours(1).AddMinutes(30));
+            DtEnd = new CalDateTime(newDate.AddHours(1).AddMinutes(30));
 	    //DtEnd = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day + 1, stophour, stopminute, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
             Location = "https://twitch.tv/mbcrump",
