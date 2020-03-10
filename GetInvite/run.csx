@@ -54,7 +54,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     var icalevent = new Event()
         {
             DtStart = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc)),
-            DtEnd = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, stophour, stopminute, 0, DateTimeKind.Utc)),
+             DtEnd = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, stophour, stopminute, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
             Location = "https://twitch.tv/mbcrump",
             Summary = "Mbcrump's Live Stream",
