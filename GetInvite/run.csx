@@ -15,6 +15,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 {
 	//Testing continuous deployment 070617
     var calendar = new Calendar();
+	var newDate;
     calendar.AddProperty("X-WR-CALNAME", "Mbcrump's Live Stream"); // sets the calendar title
     calendar.AddProperty("X-ORIGINAL-URL", "https://twitch.tv/mbcrump");
     calendar.AddProperty("METHOD", "PUBLISH");
@@ -37,7 +38,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 	    starthour = 16;
 	    stophour = 17;
 	    stopminute = 30;
-	     var newDate = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
+	    newDate = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
 
     }
 	else{
@@ -45,7 +46,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 	   starthour = 00;
 	    stophour = 01;
 	    stopminute = 30;
-	var newDate = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
+	   newDate = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
 
 	
     }
