@@ -15,11 +15,14 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 {
 	//Testing continuous deployment 070617
     var calendar = new Calendar();
-	 var test = new CalDateTime();
     calendar.AddProperty("X-WR-CALNAME", "Mbcrump's Live Stream"); // sets the calendar title
     calendar.AddProperty("X-ORIGINAL-URL", "https://twitch.tv/mbcrump");
     calendar.AddProperty("METHOD", "PUBLISH");
-    int starthour, stophour, startminute, stopminute = 00;
+    var starthour = 00;
+    var stophour = 00;
+    var startminute = 00;
+    var stopminute = 00;
+	
     DateTime nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
 	
     // parse query parameter
@@ -38,25 +41,20 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 	    starthour = 16;
 	    stophour = 17;
 	    stopminute = 30;
-	    newDate = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
-
     }
 	else{
 	 nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
 	   starthour = 00;
 	    stophour = 01;
 	    stopminute = 30;
-	   newDate = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
-
 	
     }
     string description = "Join Michael's Live Stream (https://twitch.tv/mbcrump) on as we cover some cool developer tips and tricks, do some live-coding and take your questions!";
-  //  var newDate = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc));
+
     var icalevent = new Event()
         {
             DtStart = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, starthour, 0, 0, DateTimeKind.Utc)),
-            DtEnd = new CalDateTime(newDate.AddHours(1).AddMinutes(30)),
-	    //DtEnd = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day + 1, stophour, stopminute, 0, DateTimeKind.Utc)),
+            DtEnd = new CalDateTime(new DateTime(nextStreamDay.Year, nextStreamDay.Month, nextStreamDay.Day, stophour, stopminute, 0, DateTimeKind.Utc)),
             Created = new CalDateTime(DateTime.Now),
             Location = "https://twitch.tv/mbcrump",
             Summary = "Mbcrump's Live Stream",
