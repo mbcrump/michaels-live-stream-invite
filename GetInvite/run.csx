@@ -15,7 +15,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 {
 	//Testing continuous deployment 070617
     var calendar = new Calendar();
-	var newDate;
+	 var test = new CalDateTime();
     calendar.AddProperty("X-WR-CALNAME", "Mbcrump's Live Stream"); // sets the calendar title
     calendar.AddProperty("X-ORIGINAL-URL", "https://twitch.tv/mbcrump");
     calendar.AddProperty("METHOD", "PUBLISH");
