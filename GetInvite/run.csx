@@ -38,14 +38,14 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 	
     if (dayofstream == "friday"){
 	    nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Friday);
-	    starthour = 16;
-	    stophour = 17;
+	    starthour = 9;
+	    stophour = 10;
 	    stopminute = 30;
     }
 	else{
 	 nextStreamDay = GetNextWeekday(DateTime.Today, DayOfWeek.Tuesday);
-	   starthour = 00;
-	    stophour = 01;
+	   starthour = 17;
+	    stophour = 18;
 	    stopminute = 30;
 	
     }
